@@ -11,22 +11,21 @@ class HeadersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table('headers')->insert([
             'id' => 1,
             'header' => 'Character',
         ]);
-        DB::table('headers')->insert([
+        /*  DB::table('headers')->insert([
             'id' => 2,
             'header' => 'Average',
         ]);
         DB::table('headers')->insert([
             'id' => 3,
             'header' => 'Deviation',
-        ]);
-//        DB::table('headers')->insert([
-//            'id' => 4,
-//            'header' => 'Range',
-//        ]);
+        ]);*/
+        //        DB::table('headers')->insert([
+        //            'id' => 4,
+        //            'header' => 'Range',
+        //        ]);
     }
 }

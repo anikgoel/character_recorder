@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateCharacterValuesTable extends Migration
+class CreateUserTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateCharacterValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_values', function (Blueprint $table) {
+        Schema::create('user_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('value');
+            $table->unsignedInteger('user_id')->index('user_id');
+            $table->string('tag_name');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateCharacterValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character_values');
+        Schema::dropIfExists('user_tags');
     }
 }

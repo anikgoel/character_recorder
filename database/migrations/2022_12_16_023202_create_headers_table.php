@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateHeadersTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateHeadersTable extends Migration
         Schema::create('headers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('header');
-            $table->integer('user_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable()->index('user_id');
             $table->timestamps();
         });
     }

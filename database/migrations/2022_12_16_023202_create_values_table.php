@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateValuesTable extends Migration
 {
@@ -15,9 +15,10 @@ class CreateValuesTable extends Migration
     {
         Schema::create('values', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
-            $table->integer('header_id');
+            $table->unsignedInteger('character_id')->index('character_id');
+            $table->unsignedInteger('header_id')->index('header_id');
             $table->string('value')->nullable();
+            $table->boolean('not_remove')->nullable();
             $table->timestamps();
         });
     }
